@@ -1,5 +1,5 @@
 import landing from './landing';
-import toDo from './add_to_do';
+import toDo from './to_do_form';
 
 const nav = () => {
   const nav = document.getElementById('navbar');

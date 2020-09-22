@@ -22,6 +22,7 @@ const toDo = () => {
   const submit = document.createElement('input');
 
   form.classList.add('form');
+  form.setAttribute('id', 'to_do');
 
   titleLable.setAttribute('for', 'title');
   titleInput.setAttribute('type', 'text');

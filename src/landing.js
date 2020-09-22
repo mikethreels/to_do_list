@@ -1,3 +1,11 @@
+const create = (evt) => {
+  evt.preventDefault();
+  const newTitle = document.getElementById('newTitle');
+  console.log(newTitle.value);
+  const newObject = [{ title: newTitle.value }];
+  localStorage.setItem('project', JSON.stringify(newObject));
+};
+
 const landing = () => {
   const contentdiv = document.getElementById('content');
   while (contentdiv.firstChild) {
@@ -13,6 +21,8 @@ const landing = () => {
   const submit = document.createElement('input');
 
   form.classList.add('form');
+  form.setAttribute('id', 'create_project');
+
   titleLable.setAttribute('for', 'title');
   titleInput.setAttribute('type', 'text');
   titleInput.setAttribute('name', 'title');
@@ -31,6 +41,9 @@ const landing = () => {
   form.append(titleInput);
   form.append(submit);
   contentdiv.append(form);
+
+  document.getElementById('create_project').addEventListener('submit', create);
 };
+
 
 export default landing;
