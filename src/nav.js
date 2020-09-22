@@ -1,4 +1,5 @@
 import landing from './landing';
+import toDo from './add_to_do';
 
 const nav = () => {
   const nav = document.getElementById('navbar');
@@ -15,7 +16,8 @@ const nav = () => {
     ul.append(li);
   };
 
-  createTab('+ Create', landing);
+  createTab('+ Create project', landing);
+  createTab('add to do', toDo);
 
   nav.append(ul);
 };
