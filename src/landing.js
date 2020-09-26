@@ -1,49 +1,66 @@
-const create = (evt) => {
-  evt.preventDefault();
-  const newTitle = document.getElementById('newTitle');
-  console.log(newTitle.value);
-  const newObject = [{ title: newTitle.value }];
-  localStorage.setItem('project', JSON.stringify(newObject));
-};
+import StorageLogic from './form_submission';
+import project from './project';
 
-const landing = () => {
-  const contentdiv = document.getElementById('content');
-  while (contentdiv.firstChild) {
-    contentdiv.removeChild(contentdiv.firstChild);
-  }
-  contentdiv.className = '';
-  contentdiv.classList.add('landing');
+const inputForms = (() => {
+  const visibility = () => {
+    const form = document.getElementById('content');
+    if (form.attributes.class.value === 'landing') {
+      form.attributes.class.value = 'landing hidden';
+    } else {
+      form.attributes.class.value = 'landing';
+    }
+  };
 
-  const head = document.createElement('h1');
-  const form = document.createElement('form');
-  const titleLable = document.createElement('label');
-  const titleInput = document.createElement('input');
-  const submit = document.createElement('input');
+  const toDo = () => {
+    const form = document.getElementById('to_do_container');
+    if (form.attributes.class.value === 'to_do_container') {
+      form.attributes.class.value = 'to_do_container hidden';
+    } else {
+      form.attributes.class.value = 'to_do_container';
+    }
+  };
 
-  form.classList.add('form');
-  form.setAttribute('id', 'create_project');
+  const landing = () => {
+    const contentdiv = document.getElementById('content');
+    const head = document.createElement('h1');
+    head.innerHTML = 'Create a Project';
+    const button = document.getElementById('project_button');
+    button.addEventListener('click', StorageLogic.createProject);
+    contentdiv.prepend(head);
+  };
 
-  titleLable.setAttribute('for', 'title');
-  titleInput.setAttribute('type', 'text');
-  titleInput.setAttribute('name', 'title');
-  titleInput.setAttribute('id', 'newTitle');
-  titleInput.required = true;
-  submit.setAttribute('type', 'submit');
-  submit.setAttribute('value', 'Create');
-  submit.classList.add('submit_button');
+  const toDoForm = () => {
+    const contentdiv = document.getElementById('to_do_container');
+    const head = document.createElement('h1');
+    head.innerHTML = 'Add a To Do';
+    const button = document.getElementById('to_do_button');
+    button.addEventListener('click', StorageLogic.createToDo);
+    contentdiv.prepend(head);
+  };
 
-  titleLable.innerHTML = 'Title';
-  head.innerHTML = 'Create a Project';
+  const asideList = (ul) => {
+    for (let i = 0; i < localStorage.length; i += 1) {
+      const li = document.createElement('li');
+      const link = document.createElement('a');
+      const head = localStorage.key(i);
+      link.append(head);
+      link.classList.add('aside_link');
+      link.addEventListener('click', () => {
+        project(localStorage.key(i));
+      });
+      li.append(link);
+      ul.append(li);
+    }
+    return ul;
+  };
 
+  return {
+    landing,
+    visibility,
+    toDo,
+    toDoForm,
+    asideList,
+  };
+})();
 
-  contentdiv.append(head);
-  form.append(titleLable);
-  form.append(titleInput);
-  form.append(submit);
-  contentdiv.append(form);
-
-  document.getElementById('create_project').addEventListener('submit', create);
-};
-
-
-export default landing;
+export default inputForms;

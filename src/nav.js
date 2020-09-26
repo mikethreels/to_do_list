@@ -1,5 +1,4 @@
-import landing from './landing';
-import toDo from './to_do_form';
+import inputForms from './landing';
 
 const nav = () => {
   const nav = document.getElementById('navbar');
@@ -16,8 +15,8 @@ const nav = () => {
     ul.append(li);
   };
 
-  createTab('+ Create project', landing);
-  createTab('add to do', toDo);
+  createTab('+ Create project', inputForms.visibility);
+  createTab('add to do', inputForms.toDo);
 
   nav.append(ul);
 };

@@ -19,8 +19,33 @@
       <div id="project" class="project">
 
       </div>
-      <div id="content">
-
+      <div class="form_container">
+        <div id="content" class="landing hidden">
+          <form class="form" id="create_project">
+            <label for="title">Title</label>
+            <input type="text" name="title" id="newTitle" required>
+            <label for="Description">Project Description</label>
+            <input type="text" name="Description" id="newDescription" required>
+            <button id="project_button" class="submit_button">Create Project</button>
+          </form>
+        </div>
+        <div id="to_do_container" class="to_do_container hidden">
+          <form action="" class="form" id="to_do">
+            <label for="title">Title</label>
+            <input type="text" name="title" id="newToDoTitle" required>
+            <label for="description">Description</label>
+            <input type="text" name="description" id="newToDoDescription" required>
+            <label for="date">Due Date</label>
+            <input type="date" name="date" id="newDate" required>
+            <label for="priority">Priority</label>
+            <select name="priority" id="newPriority">
+              <option value="high">High</option>
+              <option value="medium">Medium</option>
+              <option value="low">Low</option>
+            </select>
+            <button id="to_do_button" class="submit_button">Add To-Do</button>
+          </form>
+        </div>
       </div>
     </main>
     <footer>

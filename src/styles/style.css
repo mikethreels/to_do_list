@@ -27,9 +27,12 @@ form {
 
 .submit_button {
   margin-top: 20px;
-  width: 50%;
+  width: 70%;
   align-self: center;
   height: 40px;
+  border-radius: 10px;
+  font-weight: 600;
+  font-size: 20px;
 }
 
 .submit_button:hover {
@@ -45,6 +48,10 @@ header {
 
 .nav_list {
   display: flex;
+}
+
+.hidden {
+  visibility: hidden;
 }
 
 .nav_link {
@@ -84,11 +91,23 @@ aside {
 }
 
 .landing {
-  width: 40vw;
+  width: 20vw;
+  height: 30vh;
+}
+
+.to_do_container {
+  height: 60vh;
+  width: 20vw;
+  margin-top: 5px;
+}
+
+.landing:hover,
+.to_do_container:hover {
+  background-color: rgba(137, 242, 134, 0.1);;
 }
 
 .project {
-  width: 40vw;
+  width: 60vw;
 }
 
 h1 {
