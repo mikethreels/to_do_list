@@ -1,9 +1,9 @@
 import inputForms from './landing';
-import nav from './nav';
+// import nav from './nav';
 import aside from './aside';
 import project from './project';
 
-nav();
+// nav();
 project();
 inputForms.landing();
 inputForms.toDoForm();

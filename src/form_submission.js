@@ -1,11 +1,17 @@
 /* eslint-disable no-unused-vars */
 const StorageLogic = (() => {
-  const createProject = () => {
-    const newTitle = document.getElementById('newTitle').value;
-    const Description = document.getElementById('newDescription').value;
+  const createProject = (newTitle, Description, empty = false) => {
+    if (empty !== true) {
+      newTitle = document.getElementById('newTitle').value;
+      Description = document.getElementById('newDescription').value;
+    }
     const object = { Description };
 
     localStorage.setItem(newTitle, JSON.stringify(object));
+    if (empty) {
+      // eslint-disable-next-line no-restricted-globals
+      location.reload();
+    }
   };
 
   const createToDo = () => {
@@ -15,7 +21,7 @@ const StorageLogic = (() => {
     const Date = document.getElementById('newDate').value;
     const Priority = document.getElementById('newPriority').value;
     const currentKey = JSON.parse(localStorage.getItem(currentKeyName));
-    currentKey.toDo = [newTitle, Description, Date, Priority];
+    currentKey[newTitle] = [newTitle, Description, Date, Priority];
 
     localStorage.setItem(currentKeyName, JSON.stringify(currentKey));
   };

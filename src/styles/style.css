@@ -29,7 +29,7 @@ form {
   margin-top: 20px;
   width: 70%;
   align-self: center;
-  height: 40px;
+  max-height: 60px;
   border-radius: 10px;
   font-weight: 600;
   font-size: 20px;
@@ -40,15 +40,23 @@ form {
 }
 
 header {
-  max-height: 5vh;
-  min-height: 5vh;
+  max-height: 8vh;
+  min-height: 8vh;
   display: flex;
   align-items: center;
+  justify-content: center;
+  background-color: #E6F4F1;
 }
 
-.nav_list {
-  display: flex;
+a {
+  text-decoration: none;
 }
+
+.logo {
+  color: #12abdb;
+  font-size: 50px;
+}
+
 
 .hidden {
   visibility: hidden;
@@ -57,7 +65,7 @@ header {
 .nav_link {
   padding: 0 10px 2px 10px;
   margin: 0 10px;
-  background-color: #0083ff;
+  background-color: #12abdb;
   border-radius: 50px;
   font-weight: 700;
   color: white;
@@ -70,8 +78,10 @@ header {
 }
 
 aside {
-  height: 95vh;
+  margin: 5px 10px 5px 5px;
+  height: 90vh;
   width: 20vw;
+  box-shadow: -12px 0 15px -4px rgba(31, 73, 125, 0.8), 12px 0 15px -4px rgba(31, 73, 125, 0.8);
 }
 
 .aside_list {
@@ -82,7 +92,7 @@ aside {
   display: block;
   margin: 5px;
   padding: 3px;
-  background-color: #89F286;
+  background-color: #12abdb;
   text-align: center;
   border-radius: 50px;
   font-weight: 700;
@@ -91,14 +101,18 @@ aside {
 }
 
 .landing {
+  margin: 5px 5px 5px 10px;
   width: 20vw;
-  height: 30vh;
+  height: 40vh;
+  box-shadow: -12px 0 15px -4px rgba(31, 73, 125, 0.8), 12px 0 15px -4px rgba(31, 73, 125, 0.8);
 }
 
 .to_do_container {
-  height: 60vh;
+  margin: 5px 5px 5px 10px;
+  height: 49vh;
   width: 20vw;
   margin-top: 5px;
+  box-shadow: -12px 0 15px -4px rgba(31, 73, 125, 0.8), 12px 0 15px -4px rgba(31, 73, 125, 0.8);
 }
 
 .landing:hover,
@@ -107,7 +121,37 @@ aside {
 }
 
 .project {
-  width: 60vw;
+  width: 58vw;
+  padding: 15px;
+}
+
+.project_header {
+  display: grid;
+  grid-template-columns: 1fr 5fr 1fr;
+}
+
+.project_header h1 {
+  grid-column: 2/3;
+}
+
+.project_header button {
+  color: red;
+  background-color: white;
+  font-weight: 900;
+  width: 30px;
+  border-radius: 50%;
+  border: solid red;
+  justify-self: end;
+}
+
+.project_header button:hover {
+  cursor: pointer;
+}
+
+.project p {
+  margin: 20px;
+  text-align: center;
+  font-size: 20px;
 }
 
 h1 {
@@ -116,4 +160,52 @@ h1 {
   font-weight: 700;
   color: #704E00;
 }
+
+.none {
+  display: none;
+}
+
+.to_do_specs {
+  display: flex;
+  flex-direction: column;
+}
+
+.to_do_specs li {
+  margin: 3px;
+}
+
+.to_do_specs button {
+  background-color: white;
+  color: red;
+  font-weight: 700;
+  border: none;
+}
+
+.to_do_specs button:hover {
+  cursor: pointer;
+}
+
+.high {
+  background-color: red;
+}
+
+.medium {
+  background-color: orange;
+}
+
+.low {
+  background-color: #89F286;
+}
+
+.collapsible {
+  color: white;
+  cursor: pointer;
+  padding: 5px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 15px;
+}
+
 

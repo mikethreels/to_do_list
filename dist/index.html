@@ -2,25 +2,30 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>To-do List</title>
+    <title>ToDooble</title>
     <link rel="stylesheet" href="../src/styles/reset.css">
     <link rel="stylesheet" href="../src/styles/style.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.7/css/all.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
   </head>
   <body>
     <header>
-      <nav class="navbar" id="navbar">
-
+      <nav class="navbar">
+        <a href=""><h1 class="logo">ToDooble <i class="fas fa-code"></i></h1></a>
+        
       </nav>
+
     </header>
     <main>
       <aside id="side_bar">
+        <h1>Projects</h1>
         
       </aside>
       <div id="project" class="project">
 
       </div>
       <div class="form_container">
-        <div id="content" class="landing hidden">
+        <div id="content" class="landing">
           <form class="form" id="create_project">
             <label for="title">Title</label>
             <input type="text" name="title" id="newTitle" required>
@@ -29,7 +34,7 @@
             <button id="project_button" class="submit_button">Create Project</button>
           </form>
         </div>
-        <div id="to_do_container" class="to_do_container hidden">
+        <div id="to_do_container" class="to_do_container">
           <form action="" class="form" id="to_do">
             <label for="title">Title</label>
             <input type="text" name="title" id="newToDoTitle" required>
