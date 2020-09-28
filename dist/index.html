@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <title>ToDooble</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ToDooble</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     <link rel="stylesheet" href="../src/styles/reset.css">
     <link rel="stylesheet" href="../src/styles/style.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.7/css/all.css">
@@ -11,7 +12,15 @@
   </head>
   <body>
     <header>
-      <nav class="navbar">
+      <nav>
+        <div>
+          <button class="nav_button btn btn-primary" type="button" data-toggle="collapse" data-target="#content" aria-expanded="false" aria-controls="addProject">
+            Add Project
+          </button>
+          <button class="nav_button btn btn-primary" type="button" data-toggle="collapse" data-target="#to_do_container" aria-expanded="false" aria-controls="addProject">
+            Add toDo
+          </button>
+        </div>
         <a href=""><h1 class="logo">ToDooble <i class="fas fa-code"></i></h1></a>
         
       </nav>
@@ -26,7 +35,7 @@
 
       </div>
       <div class="form_container">
-        <div id="content" class="landing">
+        <div id="content" class="landing collapse">
           <form class="form" id="create_project">
             <label for="title">Title</label>
             <input type="text" name="title" id="newTitle" required>
@@ -35,7 +44,7 @@
             <button id="project_button" class="submit_button">Create Project</button>
           </form>
         </div>
-        <div id="to_do_container" class="to_do_container">
+        <div id="to_do_container" class="to_do_container collapse">
           <form class="form" id="to_do">
             <label for="toDoTitle">Title</label>
             <input type="text" name="toDoTitle" id="newToDoTitle" required />
@@ -57,5 +66,8 @@
       </div>
     </main>
     <script src="main.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
   </body>
 </html>
