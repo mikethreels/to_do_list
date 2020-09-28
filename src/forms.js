@@ -1,8 +1,7 @@
 /* eslint-disable no-alert */
 /* eslint-disable no-restricted-globals */
-import StorageLogic from './form_submission';
 
-const forms = (() => {
+const helper = (() => {
   const deleteToDo = (currenttoDo, currentKey, head) => {
     const button = document.createElement('button');
     button.addEventListener('click', () => {
@@ -66,34 +65,11 @@ const forms = (() => {
     return ul;
   };
 
-  const toDoForm = () => {
-    const contentdiv = document.getElementById('to_do_container');
-    const head = document.createElement('h1');
-    head.innerHTML = 'Add or change your ToDoo';
-    const button = document.getElementById('to_do_button');
-    button.addEventListener('click', (e) => {
-      const newTitle = document.getElementById('newToDoTitle');
-      const Description = document.getElementById('newToDoDescription');
-      const Date = document.getElementById('newDate');
-      const Priority = document.getElementById('newPriority');
-      if (newTitle.value !== '') {
-        StorageLogic.createToDo();
-        e.preventDefault();
-        location.reload();
-      }
-      newTitle.value = '';
-      Description.value = '';
-      Date.value = '';
-      Priority.value = '';
-    });
-    contentdiv.prepend(head);
-  };
   return {
-    toDoForm,
     deleteToDo,
     collapseButton,
     toDoList,
   };
 })();
 
-export default forms;
+export default helper;

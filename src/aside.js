@@ -1,4 +1,4 @@
-import project from './project';
+import forms from './project';
 
 const asideMod = (() => {
   const asideList = (ul) => {
@@ -9,7 +9,7 @@ const asideMod = (() => {
       link.append(head);
       link.classList.add('aside_link');
       link.addEventListener('click', () => {
-        project(localStorage.key(i));
+        forms.project(localStorage.key(i));
       });
       li.append(link);
       ul.append(li);
