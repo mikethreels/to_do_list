@@ -1,3 +1,4 @@
+/* eslint-disable no-alert */
 /* eslint-disable no-restricted-globals */
 import StorageLogic from './form_submission';
 
@@ -71,17 +72,19 @@ const forms = (() => {
     head.innerHTML = 'Add or change your ToDoo';
     const button = document.getElementById('to_do_button');
     button.addEventListener('click', (e) => {
-      StorageLogic.createToDo();
-      e.preventDefault();
-      location.reload();
       const newTitle = document.getElementById('newToDoTitle');
       const Description = document.getElementById('newToDoDescription');
       const Date = document.getElementById('newDate');
       const Priority = document.getElementById('newPriority');
+      if (newTitle.value !== '') {
+        StorageLogic.createToDo();
+        e.preventDefault();
+        location.reload();
+      }
       newTitle.value = '';
       Description.value = '';
       Date.value = '';
-      Priority.value = 'high';
+      Priority.value = '';
     });
     contentdiv.prepend(head);
   };

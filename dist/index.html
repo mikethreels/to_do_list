@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8">
@@ -35,21 +36,23 @@
           </form>
         </div>
         <div id="to_do_container" class="to_do_container">
-          <form action="" class="form" id="to_do">
-            <label for="title">Title</label>
-            <input type="text" name="title" id="newToDoTitle" required>
-            <label for="description">Description</label>
-            <input type="text" name="description" id="newToDoDescription" required>
+          <form class="form" id="to_do">
+            <label for="toDoTitle">Title</label>
+            <input type="text" name="toDoTitle" id="newToDoTitle" required />
+            <label for="toDoDescription">Description</label>
+            <input type="text" name="toDoDescription" id="newToDoDescription" required />
             <label for="date">Due Date</label>
-            <input type="date" name="date" id="newDate" required>
+            <input type="date" name="date" id="newDate" required />
             <label for="priority">Priority</label>
-            <select name="priority" id="newPriority">
+            <select name="priority" required id="newPriority">
+              <option value="" disabled selected></option>
               <option value="high">High</option>
               <option value="medium">Medium</option>
               <option value="low">Low</option>
             </select>
             <button id="to_do_button" class="submit_button">Add To-Do</button>
           </form>
+          <div id="alert" class="none">the form has to be filled in</div>
         </div>
       </div>
     </main>
