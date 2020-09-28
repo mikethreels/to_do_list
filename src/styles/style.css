@@ -10,7 +10,8 @@ input,
 select {
   border: solid 1px;
   border-radius: 10px;
-  height: 25px;
+  height: 20px;
+  padding: 5px;
 }
 
 label {
