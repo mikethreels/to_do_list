@@ -1,4 +1,3 @@
-// eslint-disable-next-line import/no-cycle
 import inputForms from './landing';
 import StorageLogic from './form_submission';
 
