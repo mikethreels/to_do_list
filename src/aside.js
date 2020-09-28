@@ -1,4 +1,3 @@
-import inputForms from './landing';
 import project from './project';
 
 const asideMod = (() => {
@@ -23,7 +22,7 @@ const asideMod = (() => {
     const ul = document.createElement('ul');
     ul.classList.add('aside_list');
 
-    inputForms.asideList(ul);
+    asideList(ul);
 
     aside.append(ul);
   };

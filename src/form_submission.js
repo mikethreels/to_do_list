@@ -1,4 +1,4 @@
-/* eslint-disable no-unused-vars */
+/* eslint-disable no-restricted-globals */
 const StorageLogic = (() => {
   const createProject = (newTitle, Description, empty = false) => {
     if (empty !== true) {
@@ -9,7 +9,6 @@ const StorageLogic = (() => {
 
     localStorage.setItem(newTitle, JSON.stringify(object));
     if (empty) {
-      // eslint-disable-next-line no-restricted-globals
       location.reload();
     }
   };

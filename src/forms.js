@@ -1,5 +1,5 @@
+/* eslint-disable no-restricted-globals */
 import StorageLogic from './form_submission';
-import project from './project';
 
 const forms = (() => {
   const deleteToDo = (currenttoDo, currentKey, head) => {
@@ -8,7 +8,7 @@ const forms = (() => {
       delete currentKey[currenttoDo];
       currentKey = JSON.stringify(currentKey);
       localStorage.setItem(head, currentKey);
-      project(head);
+      location.reload();
     });
     return button;
   };
@@ -65,7 +65,6 @@ const forms = (() => {
     return ul;
   };
 
-
   const toDoForm = () => {
     const contentdiv = document.getElementById('to_do_container');
     const head = document.createElement('h1');
@@ -74,8 +73,7 @@ const forms = (() => {
     button.addEventListener('click', (e) => {
       StorageLogic.createToDo();
       e.preventDefault();
-      const currentKeyName = document.getElementById('current_key').innerHTML;
-      project(currentKeyName);
+      location.reload();
       const newTitle = document.getElementById('newToDoTitle');
       const Description = document.getElementById('newToDoDescription');
       const Date = document.getElementById('newDate');
@@ -90,6 +88,7 @@ const forms = (() => {
   return {
     toDoForm,
     deleteToDo,
+    collapseButton,
     toDoList,
   };
 })();

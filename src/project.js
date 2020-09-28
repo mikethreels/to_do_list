@@ -1,5 +1,6 @@
 import inputForms from './landing';
 import StorageLogic from './form_submission';
+import forms from './forms';
 
 const project = (header) => {
   if (header === undefined) {
@@ -29,7 +30,7 @@ const project = (header) => {
 
   const ul = document.createElement('ul');
   ul.classList.add('to_do_list');
-  inputForms.toDoList(ul, header);
+  forms.toDoList(ul, header);
 
   contentdiv.append(ul);
 };

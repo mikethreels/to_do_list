@@ -1,8 +1,9 @@
 import inputForms from './landing';
-import aside from './aside';
+import asideMod from './aside';
 import project from './project';
+import forms from './forms';
 
 project();
 inputForms.landing();
-inputForms.toDoForm();
-aside();
+forms.toDoForm();
+asideMod.aside();
