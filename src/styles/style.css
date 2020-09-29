@@ -208,7 +208,7 @@ aside {
 .to_do_specs {
   display: flex;
   flex-direction: column;
-  border: solid 1px rgba(100, 100, 100, 0.2);;
+  border: solid 1px rgba(100, 100, 100, 0.2);
 }
 
 .to_do_specs li {
@@ -251,17 +251,17 @@ aside {
 
 /* Track */
 ::-webkit-scrollbar-track {
-  box-shadow: inset 0 0 5px grey; 
+  box-shadow: inset 0 0 5px grey;
   border-radius: 10px;
 }
- 
+
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  background: grey; 
+  background: grey;
   border-radius: 10px;
 }
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-  background: rgb(85, 85, 85); 
+  background: rgb(85, 85, 85);
 }
