@@ -47,7 +47,7 @@ const forms = (() => {
       const Date = document.getElementById('newDate');
       const Priority = document.getElementById('newPriority');
       const currentKeyName = document.getElementById('current_key');
-      if (newTitle.value !== '') {
+      if (newTitle.value !== '' && Description.value !== '' && Date.value !== '' && Priority.value !== '') {
         StorageLogic.createToDo();
         // e.preventDefault();
         // eslint-disable-next-line no-restricted-globals
