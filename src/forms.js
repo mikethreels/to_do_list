@@ -33,6 +33,15 @@ const helper = (() => {
     return button;
   };
 
+  const editToDo = (currenttoDo) => {
+    const button = document.createElement('button');
+    button.addEventListener('click', () => {
+      const newTitle = document.getElementById('newToDoTitle');
+      newTitle.value = currenttoDo;
+    });
+    return button;
+  };
+
   const toDoList = (ul, head) => {
     const currentKey = JSON.parse(localStorage.getItem(head));
 
@@ -50,13 +59,22 @@ const helper = (() => {
 
       const button = collapseButton(innerUl, currentKey, currenttoDo);
       const delToDo = deleteToDo(currenttoDo, currentKey, head);
+      const editButton = editToDo(currenttoDo);
+      editButton.classList.add('edit_button');
       delToDo.setAttribute('type', 'button');
+      editButton.setAttribute('type', 'button');
+      editButton.setAttribute('data-toggle', 'collapse');
+      editButton.setAttribute('data-target', '#to_do_container');
+      editButton.setAttribute('aria-expanded', 'false');
+      editButton.setAttribute('aria-controls', 'addProject');
       button.append(`+ ${currenttoDo}`);
       delToDo.innerHTML = 'Delete toDo';
+      editButton.innerHTML = 'Edit toDo';
       button.classList.add('collapsible');
       innerUl.append(toDoDescription);
       innerUl.append(toDoDate);
       innerUl.append(toDoPriority);
+      innerUl.append(editButton);
       innerUl.append(delToDo);
       li.append(button);
       li.append(innerUl);
@@ -69,6 +87,7 @@ const helper = (() => {
     deleteToDo,
     collapseButton,
     toDoList,
+    editToDo,
   };
 })();
 

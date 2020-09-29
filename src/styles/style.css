@@ -135,6 +135,7 @@ aside {
 
 .to_do_container {
   margin: 5px 5px 5px 10px;
+  background: white;
   position: fixed;
   bottom: 25px;
   right: 30px;
@@ -174,10 +175,18 @@ aside {
 }
 
 .to_do_specs button {
-  background-color: white;
-  color: red;
+  background-color: red;
+  color: white;
   font-weight: 700;
   border: none;
+  width: 50%;
+  margin: 5px auto;
+  border-radius: 10px;
+}
+
+.to_do_specs .edit_button {
+  background-color: #007bff;
+  color: white;
 }
 
 .project_header button:hover {
