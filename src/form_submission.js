@@ -1,6 +1,7 @@
 /* eslint-disable no-restricted-globals */
 const StorageLogic = (() => {
-  const createProject = (newTitle, Description, empty = false) => {
+  const createProject = (newTitle, Description, empty = false, e) => {
+    e.prevendefault();
     if (empty !== true) {
       newTitle = document.getElementById('newTitle').value;
       Description = document.getElementById('newDescription').value;

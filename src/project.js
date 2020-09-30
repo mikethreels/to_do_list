@@ -1,3 +1,4 @@
+/* eslint-disable no-restricted-globals */
 import inputForms from './landing';
 import StorageLogic from './form_submission';
 import helper from './forms';
@@ -41,7 +42,8 @@ const forms = (() => {
     const head = document.createElement('h1');
     head.innerHTML = 'Add or change your ToDoo';
     const button = document.getElementById('to_do_button');
-    button.addEventListener('click', () => {
+    button.addEventListener('click', (e) => {
+      e.preventDefault();
       const newTitle = document.getElementById('newToDoTitle');
       const Description = document.getElementById('newToDoDescription');
       const Date = document.getElementById('newDate');
@@ -49,8 +51,7 @@ const forms = (() => {
       const currentKeyName = document.getElementById('current_key');
       if (newTitle.value !== '' && Description.value !== '' && Date.value !== '' && Priority.value !== '') {
         StorageLogic.createToDo();
-        // e.preventDefault();
-        // eslint-disable-next-line no-restricted-globals
+        location.reload();
         project(currentKeyName);
       }
       newTitle.value = '';
